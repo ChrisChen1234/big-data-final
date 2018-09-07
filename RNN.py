@@ -21,7 +21,7 @@ import pandas as pd
 # In[5]:
 
 
-X_train = np.zeros((30, 7500, 4))
+X_train = np.zeros((40, 7500, 4))
 
 for x in range(0,39):
     X_train[x] = pd.read_excel('{num}.xls'.format(num = x)).drop('Col5',axis=1).values
