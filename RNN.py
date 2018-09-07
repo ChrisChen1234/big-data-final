@@ -73,14 +73,14 @@ model.add(CuDNNGRU(5,
 
 
 model.add(Dense(1, W_regularizer=l2(0.01)))
-adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
-model.compile(optimizer=adam,loss='mse')
+Nadam = keras.optimizers.Nadam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=None, schedule_decay=0.001)
+model.compile(optimizer=Nadam,loss='mse')
 
 
 # In[17]:
 
 
-model.fit(X_train, Y_train, epochs=500, batch_size=5)
+model.fit(X_train, Y_train, epochs=600, batch_size=5)
 
 
 # In[ ]:
